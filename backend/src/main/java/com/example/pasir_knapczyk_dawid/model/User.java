@@ -1,0 +1,36 @@
+package com.example.pasir_knapczyk_dawid.model;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+
+import lombok.Setter;
+import lombok.Getter;
+
+@Getter
+@Setter
+@Entity
+@Table(name = "users")
+
+
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @NotBlank(message = "Nazwa użytkownika jest wymagana")
+    private String username;
+
+    @Email(message = "Podaj poprawny adres e-mail")
+    @NotBlank(message = "Email jest wymagany")
+    private String email;
+
+    @NotBlank(message = "Hasło nie może być puste")
+    private String password;
+
+    private String currency = "PLN";
+}
+
+
+//dawid@dawid.pl    dawid1
+//user@user.pl  user12
