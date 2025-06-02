@@ -54,7 +54,7 @@ public class DebtGraphQLController {
     }
 
     @MutationMapping
-    public Boolean confirmDebtAsPaid(@Argument Long debtId) {
+    public Boolean confirmDebtPayment(@Argument Long debtId) {
         User currentUser = transactionService.getCurrentUser();
         return debtService.confirmPayment(debtId, currentUser);
     }

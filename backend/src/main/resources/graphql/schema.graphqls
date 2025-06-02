@@ -31,7 +31,7 @@ type Mutation {
     addGroupTransaction(groupTransactionDTO: GroupTransactionInput!): Boolean
 
     markDebtAsPaid(debtId: ID!): Boolean
-    confirmDebtAsPaid(debtId: ID!): Boolean
+    confirmDebtPayment(debtId: ID!): Boolean
 }
 
 type Transaction {
